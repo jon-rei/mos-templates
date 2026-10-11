@@ -9,7 +9,7 @@
   "default_shell": "",
   "privileged": false,
   "no_autoupdate": false,
-  "extra_parameters": "--volume /:/host:ro,rslave",
+  "extra_parameters": "",
   "post_parameters": "--path.rootfs=/host --path.procfs=/host/proc --path.sysfs=/host/sys",
   "web_ui_url": "http://[IP]:[PORT:9100]/metrics",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/prometheus-node-exporter.png",
@@ -17,7 +17,15 @@
   "project": "https://github.com/prometheus/node_exporter",
   "readme_url": "https://github.com/prometheus/node_exporter/blob/master/README.md",
   "support": "https://github.com/jon-rei/mos-templates/issues",
-  "paths": [],
+  "paths": [
+    {
+      "name": "Host root",
+      "host": "/",
+      "container": "/host",
+      "mode": "ro",
+      "description": "Host root filesystem, read by node-exporter for filesystem, process and network metrics"
+    }
+  ],
   "ports": [
     {
       "name": "Metrics",
