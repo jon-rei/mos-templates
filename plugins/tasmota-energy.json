@@ -1,0 +1,13 @@
+{
+  "name": "Tasmota Energy Monitor",
+  "description": "Dashboard widget and plugin page showing energy consumption of your Tasmota devices",
+  "category": [ "Home Automation" ],
+  "repository": "https://github.com/jon-rei/mos-tasmota",
+  "architecture": [ "all" ],
+  "driver": false,
+  "settings": true,
+  "readme_url": "https://github.com/jon-rei/mos-tasmota/blob/main/README.md",
+  "author": "jon-rei",
+  "homepage": "https://github.com/jon-rei/mos-tasmota",
+  "support": "https://github.com/jon-rei/mos-tasmota/issues"
+}
