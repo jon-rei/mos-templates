@@ -12,6 +12,12 @@ repository with plugins and Docker/Compose templates for
 | --- | --- |
 | [Tasmota Energy Monitor](plugins/tasmota-energy.json) | Dashboard widget and plugin page showing energy consumption of your Tasmota devices |
 
+### Docker
+
+| Container | Description |
+| --- | --- |
+| [node-exporter](docker/node-exporter.json) | Prometheus exporter for host hardware and OS metrics |
+
 ## Installation
 
 1. Enable the Hub if it is not already: **Settings -> System Configuration -> MOS Hub Settings**.
@@ -21,12 +27,12 @@ repository with plugins and Docker/Compose templates for
 https://github.com/jon-rei/mos-templates
 ```
 
-The plugin appears under **MOS Hub -> Plugins** (category *Home Automation*).
+The plugin appears under **MOS Hub -> Plugins** (category *Home Automation*), the container under **MOS Hub -> Docker**.
 
 ## Repository structure
 
 ```
-├── docker/       # single-container Docker templates (empty for now)
+├── docker/       # single-container Docker templates
 ├── compose/      # Docker Compose stack templates (empty for now)
 ├── plugins/      # system plugins and utilities
 ├── images/       # icons for templates and plugins
