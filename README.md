@@ -14,21 +14,14 @@ repository with plugins and Docker/Compose templates for
 
 ## Installation
 
-Add this repository to your MOS instance:
-
-**Settings -> System Configuration -> MOS Hub Settings -> MOS Hub**
+1. Enable the Hub if it is not already: **Settings -> System Configuration -> MOS Hub Settings**.
+2. Open **MOS Hub**, click the repositories icon, add this repository and save:
 
 ```
 https://github.com/jon-rei/mos-templates
 ```
 
-Click **Refresh**, then browse **Docker -> MOS Hub** — the plugin appears under
-**Home Automation**.
-
-The Tasmota Energy Monitor is installed from
-[jon-rei/mos-tasmota](https://github.com/jon-rei/mos-tasmota); see its
-[README](https://github.com/jon-rei/mos-tasmota/blob/main/README.md) for
-configuration (devices, refresh interval, electricity price).
+The plugin appears under **MOS Hub -> Plugins** (category *Home Automation*).
 
 ## Repository structure
 

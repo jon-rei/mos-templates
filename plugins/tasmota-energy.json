@@ -1,6 +1,7 @@
 {
   "name": "Tasmota Energy Monitor",
   "description": "Dashboard widget and plugin page showing energy consumption of your Tasmota devices",
+  "icon": "mdi-flash",
   "category": [ "Home Automation" ],
   "repository": "https://github.com/jon-rei/mos-tasmota",
   "architecture": [ "all" ],
