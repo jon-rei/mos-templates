@@ -1,7 +1,7 @@
 {
   "name": "Tasmota Energy Monitor",
   "description": "Dashboard widget and plugin page showing energy consumption of your Tasmota devices",
-  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/tasmota-light.png",
+  "icon": "https://raw.githubusercontent.com/jon-rei/mos-tasmota/refs/heads/main/page/public/icon.png",
   "category": [ "Home Automation" ],
   "repository": "https://github.com/jon-rei/mos-tasmota",
   "architecture": [ "all" ],
