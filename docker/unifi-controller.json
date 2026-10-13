@@ -1,0 +1,106 @@
+{
+  "name": "unifi-controller",
+  "description": "UniFi Network Controller with built-in MongoDB to manage Ubiquiti UniFi access points, switches and gateways. Web UI at https://<ip>:8443. Uses the floating 10.6 image tag, so updates pull the latest 10.6.x release - take a UniFi backup before upgrading, cross-major-version upgrades may require a restore.",
+  "category": [ "Network" ],
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/unifi.png",
+  "project": "https://github.com/11notes/docker-unifi",
+  "readme_url": "https://github.com/11notes/docker-unifi/blob/master/README.md",
+  "support": "https://github.com/11notes/docker-unifi/issues",
+  "repo": "11notes/unifi:10.6",
+  "registry": "https://hub.docker.com/r/11notes/unifi",
+  "architecture": [ "amd64", "arm64" ],
+  "network": "bridge",
+  "custom_ip": "",
+  "privileged": false,
+  "default_shell": "",
+  "no_autoupdate": false,
+  "extra_parameters": "--restart=unless-stopped --user=500:500 --tmpfs /unifi/log:exec,uid=500,gid=500 --tmpfs /unifi/run:exec,uid=500,gid=500 --tmpfs /tmp:exec,uid=500,gid=500",
+  "post_parameters": "",
+  "web_ui_url": "https://[IP]:[PORT:8443]",
+  "paths": [
+    {
+      "name": "Appdata",
+      "host": "/mnt/cache/appdata/unifi-controller",
+      "container": "/unifi/var",
+      "mode": "rw",
+      "description": "All UniFi controller data (configuration, sites, MongoDB database)"
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI",
+      "protocol": "tcp",
+      "host": "8443",
+      "container": "8443",
+      "description": "UniFi web admin interface (HTTPS)"
+    },
+    {
+      "name": "Device communication",
+      "protocol": "tcp",
+      "host": "8080",
+      "container": "8080",
+      "description": "Required for UniFi device communication and adoption"
+    },
+    {
+      "name": "STUN",
+      "protocol": "udp",
+      "host": "3478",
+      "container": "3478",
+      "description": "UniFi STUN port"
+    },
+    {
+      "name": "AP discovery",
+      "protocol": "udp",
+      "host": "10001",
+      "container": "10001",
+      "description": "Required for access point discovery"
+    },
+    {
+      "name": "L2 discovery",
+      "protocol": "udp",
+      "host": "1900",
+      "container": "1900",
+      "description": "Required for the 'Make controller discoverable on L2 network' option"
+    },
+    {
+      "name": "Guest portal HTTPS",
+      "protocol": "tcp",
+      "host": "8843",
+      "container": "8843",
+      "description": "UniFi guest portal HTTPS redirect port"
+    },
+    {
+      "name": "Guest portal HTTP",
+      "protocol": "tcp",
+      "host": "8880",
+      "container": "8880",
+      "description": "UniFi guest portal HTTP redirect port"
+    },
+    {
+      "name": "Speed test",
+      "protocol": "tcp",
+      "host": "6789",
+      "container": "6789",
+      "description": "Used for the mobile throughput test"
+    },
+    {
+      "name": "Remote syslog",
+      "protocol": "udp",
+      "host": "5514",
+      "container": "5514",
+      "description": "Remote syslog port for UniFi devices"
+    }
+  ],
+  "variables": [
+    {
+      "name": "Timezone: TZ",
+      "key": "TZ",
+      "value": "",
+      "description": "Timezone for the controller, e.g. Europe/Berlin",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "devices": [],
+  "labels": []
+}

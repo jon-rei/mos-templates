@@ -19,6 +19,7 @@ repository with plugins and Docker/Compose templates for
 | [draytek-exporter](docker/draytek-exporter.json) | Prometheus exporter for DrayTek Vigor modems (currently Vigor 167, v5 firmware) |
 | [mktxp](docker/mktxp.json) | Prometheus exporter for MikroTik RouterOS devices |
 | [node-exporter](docker/node-exporter.json) | Prometheus exporter for host hardware and OS metrics |
+| [unifi-controller](docker/unifi-controller.json) | Ubiquiti UniFi Network Controller with built-in MongoDB for managing UniFi devices |
 
 ## Installation
 
