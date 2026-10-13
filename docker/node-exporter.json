@@ -4,14 +4,14 @@
   "category": [ "Monitoring" ],
   "architecture": [ "amd64", "arm64" ],
   "registry": "https://ghcr.io/prometheus/node-exporter",
-  "network": "bridge",
+  "network": "host",
   "custom_ip": "",
   "default_shell": "",
   "privileged": false,
   "no_autoupdate": false,
   "extra_parameters": "",
   "post_parameters": "--path.rootfs=/host --path.procfs=/host/proc --path.sysfs=/host/sys",
-  "web_ui_url": "http://[IP]:[PORT:9100]/metrics",
+  "web_ui_url": "http://[IP]:[PORT:9100]/",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/prometheus-node-exporter.png",
   "description": "Prometheus exporter for host hardware and OS metrics (CPU, memory, disks, network, filesystems). Scraped at http://<ip>:9100/metrics.",
   "project": "https://github.com/prometheus/node_exporter",
@@ -23,18 +23,10 @@
       "host": "/",
       "container": "/host",
       "mode": "ro",
-      "description": "Host root filesystem, read by node-exporter for filesystem, process and network metrics"
+      "description": "Host root filesystem, read by node-exporter for filesystem and process"
     }
   ],
-  "ports": [
-    {
-      "name": "Metrics",
-      "protocol": "tcp",
-      "host": "9100",
-      "container": "9100",
-      "description": "Prometheus metrics endpoint of node-exporter"
-    }
-  ],
+  "ports": [],
   "variables": [],
   "devices": [],
   "labels": [],
