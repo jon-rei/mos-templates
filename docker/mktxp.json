@@ -1,0 +1,41 @@
+{
+  "name": "mktxp",
+  "description": "MikroTik RouterOS Prometheus exporter (MKTXP). Exposes RouterOS device metrics (interfaces, DHCP, routes, bandwidth, ...) for Prometheus at http://<ip>:49090/metrics. After deployment, edit mktxp.conf in the mapped config directory to add your RouterOS devices.",
+  "category": [ "Monitoring" ],
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/mikrotik.png",
+  "project": "https://github.com/akpw/mktxp",
+  "readme_url": "https://github.com/akpw/mktxp/blob/main/README.md",
+  "support": "https://github.com/akpw/mktxp/issues",
+  "repo": "ghcr.io/akpw/mktxp",
+  "registry": "https://github.com/akpw/mktxp/pkgs/container/mktxp",
+  "architecture": [ "amd64", "arm64" ],
+  "network": "bridge",
+  "custom_ip": "",
+  "privileged": false,
+  "default_shell": "",
+  "no_autoupdate": false,
+  "extra_parameters": "--restart=unless-stopped --user=500:500",
+  "post_parameters": "",
+  "web_ui_url": "http://[IP]:[PORT:49090]/metrics",
+  "paths": [
+    {
+      "name": "Config",
+      "host": "/mnt/cache/appdata/mktxp",
+      "container": "/etc/mktxp",
+      "mode": "rw",
+      "description": "MKTXP config directory containing mktxp.conf with your RouterOS device connections"
+    }
+  ],
+  "ports": [
+    {
+      "name": "Metrics",
+      "protocol": "tcp",
+      "host": "49090",
+      "container": "49090",
+      "description": "Prometheus metrics endpoint of mktxp"
+    }
+  ],
+  "variables": [],
+  "devices": [],
+  "labels": []
+}

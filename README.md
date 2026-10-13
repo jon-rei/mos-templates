@@ -16,6 +16,8 @@ repository with plugins and Docker/Compose templates for
 
 | Container | Description |
 | --- | --- |
+| [draytek-exporter](docker/draytek-exporter.json) | Prometheus exporter for DrayTek Vigor modems (currently Vigor 167, v5 firmware) |
+| [mktxp](docker/mktxp.json) | Prometheus exporter for MikroTik RouterOS devices |
 | [node-exporter](docker/node-exporter.json) | Prometheus exporter for host hardware and OS metrics |
 
 ## Installation
@@ -27,7 +29,7 @@ repository with plugins and Docker/Compose templates for
 https://github.com/jon-rei/mos-templates
 ```
 
-The plugin appears under **MOS Hub -> Plugins** (category *Home Automation*), the container under **MOS Hub -> Docker**.
+Plugins appear under **MOS Hub -> Plugins** and Docker templates under **MOS Hub -> Docker**.
 
 ## Repository structure
 
@@ -36,7 +38,10 @@ The plugin appears under **MOS Hub -> Plugins** (category *Home Automation*), th
 ├── compose/      # Docker Compose stack templates (empty for now)
 ├── plugins/      # system plugins and utilities
 ├── images/       # icons for templates and plugins
+├── scripts/      # helper scripts (template formatter)
 ├── maintainer.json
+├── CONTRIBUTING.md # template guidelines
+├── AGENTS.md       # instructions for AI coding agents
 └── README.md
 ```
 

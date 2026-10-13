@@ -1,0 +1,42 @@
+{
+  "name": "draytek-exporter",
+  "description": "Prometheus exporter for DrayTek Vigor modems/routers (Vigor 167, v5 firmware). Scraped at http://<ip>:9103/metrics. Set DRAYTEK_PASSWORD to the router login password and adjust the post-deploy parameters: --target=<router ip> (default 192.168.0.1) and optionally --username=<router user> (defaults to 'monitor').",
+  "category": [ "Monitoring" ],
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/draytek.png",
+  "project": "https://github.com/superq/draytek_exporter",
+  "readme_url": "https://github.com/superq/draytek_exporter/blob/master/README.md",
+  "support": "https://github.com/superq/draytek_exporter/issues",
+  "repo": "quay.io/superq/draytek-exporter",
+  "registry": "https://quay.io/repository/superq/draytek-exporter",
+  "architecture": [ "amd64", "arm64" ],
+  "network": "bridge",
+  "custom_ip": "",
+  "privileged": false,
+  "default_shell": "",
+  "no_autoupdate": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": "--target=192.168.0.1",
+  "web_ui_url": "http://[IP]:[PORT:9103]/metrics",
+  "paths": [],
+  "ports": [
+    {
+      "name": "Metrics",
+      "protocol": "tcp",
+      "host": "9103",
+      "container": "9103",
+      "description": "Prometheus metrics endpoint of draytek-exporter"
+    }
+  ],
+  "variables": [
+    {
+      "name": "Router Password: DRAYTEK_PASSWORD",
+      "key": "DRAYTEK_PASSWORD",
+      "value": "",
+      "description": "Password used to authenticate to the DrayTek router (read from the env var named by --password-env, default DRAYTEK_PASSWORD)",
+      "required": true,
+      "mask": true
+    }
+  ],
+  "devices": [],
+  "labels": []
+}

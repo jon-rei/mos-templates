@@ -1,34 +1,33 @@
 {
   "name": "node-exporter",
-  "repo": "ghcr.io/prometheus/node-exporter",
-  "category": [ "Monitoring" ],
-  "architecture": [ "amd64", "arm64" ],
-  "registry": "https://ghcr.io/prometheus/node-exporter",
-  "network": "host",
-  "custom_ip": "",
-  "default_shell": "",
-  "privileged": false,
-  "no_autoupdate": false,
-  "extra_parameters": "",
-  "post_parameters": "--path.rootfs=/host --path.procfs=/host/proc --path.sysfs=/host/sys",
-  "web_ui_url": "http://[IP]:[PORT:9100]/",
-  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/prometheus-node-exporter.png",
   "description": "Prometheus exporter for host hardware and OS metrics (CPU, memory, disks, network, filesystems). Scraped at http://<ip>:9100/metrics.",
+  "category": [ "Monitoring" ],
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/prometheus-node-exporter.png",
   "project": "https://github.com/prometheus/node_exporter",
   "readme_url": "https://github.com/prometheus/node_exporter/blob/master/README.md",
-  "support": "https://github.com/jon-rei/mos-templates/issues",
+  "support": "https://github.com/prometheus/node_exporter/issues",
+  "repo": "ghcr.io/prometheus/node-exporter",
+  "registry": "https://ghcr.io/prometheus/node-exporter",
+  "architecture": [ "amd64", "arm64" ],
+  "network": "host",
+  "custom_ip": "",
+  "privileged": false,
+  "default_shell": "",
+  "no_autoupdate": false,
+  "extra_parameters": "--restart=unless-stopped --pid=host",
+  "post_parameters": "--path.rootfs=/host --path.procfs=/host/proc --path.sysfs=/host/sys",
+  "web_ui_url": "http://[IP]:[PORT:9100]/",
   "paths": [
     {
       "name": "Host root",
       "host": "/",
       "container": "/host",
       "mode": "ro",
-      "description": "Host root filesystem, read by node-exporter for filesystem and process"
+      "description": "Host root filesystem, read by node-exporter for filesystem and process metrics"
     }
   ],
   "ports": [],
   "variables": [],
   "devices": [],
-  "labels": [],
-  "gpus": []
+  "labels": []
 }
